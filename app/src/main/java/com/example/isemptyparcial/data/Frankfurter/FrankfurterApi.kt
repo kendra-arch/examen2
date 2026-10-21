@@ -8,5 +8,5 @@ interface FrankfurterApi {
     suspend fun getRates(
         @Query("base") base: String = "USD",
         @Query("quotes") quotes: String = "EUR,BOB"
-    ): FrankfurterResponseDto
+    ): List<FrankfurterResponseDto>
 }

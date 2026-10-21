@@ -25,9 +25,9 @@ fun DummyProductResumen.aEntidad(): FavoritoEntity =
 
 fun FrankfurterResponseDto.aResumen(): FrankfurterResumen =
     FrankfurterResumen(
-        base = base,
-        date = date,
-        rates = rates
+        base = base ?: "USD",
+        date = date ?: "",
+        rates = rates ?: emptyMap()
     )
 
 fun FrankfurterResumen.aEntidad(): FavoritoEntity =
@@ -37,7 +37,11 @@ fun FrankfurterResumen.aEntidad(): FavoritoEntity =
 // GRUPO 1: MAPELADOR 2 (Frankfurter & JSONPlaceholder) - Tasas y Publicaciones
 // ============================================================================
 fun FrankfurterResponseDto.aResumenMapeadorDos(): FrankfurterResumen =
-    FrankfurterResumen(base = base, date = date, rates = rates)
+    FrankfurterResumen(
+        base = base ?: "USD",
+        date = date ?: "",
+        rates = rates ?: emptyMap()
+    )
 
 fun FrankfurterResumen.aEntidadMapeadorDos(): FavoritoEntity =
     FavoritoEntity(id = date.hashCode(), quote = "Moneda Base ($base) - Fecha: $date")

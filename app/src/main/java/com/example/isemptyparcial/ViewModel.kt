@@ -101,8 +101,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch {
             _ratesState.value = UiState.Loading
             try {
-                val response = frankfurterRepository.obtenerRates()
-                val resumen = response.aResumen()
+                val responseList = frankfurterRepository.obtenerRates()
+                val firstRate = responseList.firstOrNull() ?: throw Exception("No se encontraron tasas de cambio")
+                val resumen = firstRate.aResumen()
                 _ratesState.value = UiState.Success(resumen)
             } catch (e: Exception) {
                 _ratesState.value = UiState.Error("Error al cargar tipos de cambio: ${e.localizedMessage}")
