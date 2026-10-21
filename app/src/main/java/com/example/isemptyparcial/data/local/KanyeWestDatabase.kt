@@ -18,7 +18,7 @@ abstract class KanyeWestDatabase : RoomDatabase() {
                 instancia ?: Room.databaseBuilder(
                     context.applicationContext,
                     KanyeWestDatabase::class.java,
-                    "kanyex.db"
+                    "market.db"
                 )
                 .fallbackToDestructiveMigration()
                 .build()

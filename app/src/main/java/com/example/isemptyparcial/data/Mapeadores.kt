@@ -7,14 +7,6 @@ import com.example.isemptyparcial.data.local.FavoritoEntity
 import com.example.isemptyparcial.models.DummyProductResumen
 import com.example.isemptyparcial.models.FrankfurterResumen
 import com.example.isemptyparcial.models.JSONPlaceholderResumen
-import com.example.isemptyparcial.models.KanyeQuoteResumen
-
-// --- Kanye Mapper ---
-fun FavoritoEntity.aResumen(): KanyeQuoteResumen =
-    KanyeQuoteResumen(quote = quote)
-
-fun KanyeQuoteResumen.aEntidad(): FavoritoEntity =
-    FavoritoEntity(id = quote.hashCode(), quote = quote)
 
 // ============================================================================
 // GRUPO 1: MAPELADOR 1 (DummyJSON & Frankfurter) - Productos, Precios y Tasas
