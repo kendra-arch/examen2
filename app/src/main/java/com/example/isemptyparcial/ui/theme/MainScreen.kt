@@ -46,7 +46,7 @@ import com.example.isemptyparcial.models.KanyeQuoteResumen
 
 val backgroundColor = Color(0xFF121212)
 val surfaceColor = Color(0xFF1E1E1E)
-val textColor = Color(0xFFF5F5F5)
+val textColor = Color(0xFF9C27B0)
 val primaryColor = Color(0xFFE91E63)
 
 @OptIn(ExperimentalMaterial3Api::class)
